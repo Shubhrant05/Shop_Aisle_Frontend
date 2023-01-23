@@ -1,0 +1,220 @@
+.logo-font {
+  font-family: initial;
+  font-size: 2rem;
+}
+
+.f-5 {
+  font-size: 5rem;
+  font-family: initial;
+}
+.f-1 {
+  font-size: 1.5rem;
+}
+.hero-bg {
+  width: 100%;
+}
+
+.Shop-type {
+  font-family: initial;
+  font-weight: 700;
+  font-size: 1rem;
+}
+.title {
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 2rem;
+}
+.backdrop {
+  height: 100vh;
+  width: 100vw;
+  opacity: 0.5;
+}
+
+.hover-delete:hover {
+  background: none;
+  border: 3px solid red;
+  color: black;
+}
+
+.hover-edit:hover {
+  background: none;
+  border: 3px solid blue;
+  color: black;
+}
+
+.nav-btn{
+  border: 0px;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 0.7rem;
+  margin-left: 1rem;
+  display: block;
+}
+
+.hamburger{
+  color: white;
+  font-size:3rem;
+  
+}
+
+.nav-btn:hover{
+  color: rgb(255, 81, 81);
+}
+
+.my-nav-bar{
+  position: fixed;
+}
+
+.status-lp {
+  display: none;
+}
+.status-mb {
+  text-align: center;
+  width: 70%;
+  display: block;
+}
+
+.w-85 {
+  width: 90%;
+}
+
+.w-80 {
+  width: 80%;
+}
+
+.details {
+  flex-direction: column;
+}
+
+.signup {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signup-logo {
+  font-size: 3rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  color: rgb(255, 81, 81);
+  margin-left: 1.5rem;
+}
+
+.password-button {
+  background: none;
+  border: 0px;
+  color: white;
+  font-size: 1.5rem;
+  width: 0.8rem;
+}
+.signup-head {
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  width: 100%;
+}
+
+.btngrp{
+  display: none;
+}
+
+.signup-page {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.input-field {
+  background: none;
+  border: 0px;
+  border-bottom: 2px solid white;
+  width: 85%;
+  color: white;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+.input-field:focus {
+  outline: none;
+  border-bottom: 2px solid rgb(255, 81, 81);
+}
+
+.input-field::placeholder {
+  color: white;
+  opacity: 0.6;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.signup-form {
+  width: 100%;
+}
+
+.error {
+  color: red;
+  font-size: 0.9rem;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
+  /* position: absolute; */
+}
+
+@media only screen and (min-width: 960px) {
+  /* styles for browsers larger than 960px; */
+  .hero-bg {
+    width: 70%;
+  }
+  .details {
+    flex-direction: row;
+  }
+
+  .status-lp {
+    display: block;
+  }
+
+  .status-mb {
+    display: none;
+  }
+
+  .Shop-type {
+    font-size: 1.3rem;
+  }
+
+  .hamburger-icon{
+    display: none;
+  }
+
+  .btngrp{
+    display: flex;
+  }
+  .signup {
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    width: 50%;
+    margin-top: -5rem;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .signup-page {
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  .input-field {
+    width: 70%;
+  }
+
+  .signup-form {
+    width: 50%;
+  }
+}
