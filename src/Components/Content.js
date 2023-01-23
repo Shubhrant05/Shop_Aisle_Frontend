@@ -14,7 +14,7 @@ const Content = () => {
     const navigate = useNavigate()
     useEffect(() => {
         setLoading(true)
-        axios.get("http://localhost:5000/api/shop/getShop").then(
+        axios.get("https://shopaislebackend.onrender.com/api/shop/getShop").then(
             (response) => {
                 console.log(response)
                 setData(response.data)
@@ -28,7 +28,7 @@ const Content = () => {
     // }
 
     const deleteShop = (id) => {
-        axios.delete(`http://localhost:5000/api/shop/deleteShop/${id}`).then((response) => {
+        axios.delete(`https://shopaislebackend.onrender.com/api/shop/deleteShop/${id}`).then((response) => {
             if (response.status === 200) {
                 alert(response.data.name + " will be deleted")
                 let filteredArr = data.filter((shop) => shop._id !== response.data._id)

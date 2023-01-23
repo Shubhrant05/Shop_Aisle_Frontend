@@ -21,7 +21,7 @@ const SignupForm = () => {
 
         axios({
             method: "post",
-            url: "http://localhost:5000/api/user/addUser",
+            url: "https://shopaislebackend.onrender.com/api/user/addUser",
             data: values,
         }).then((res) => {
 

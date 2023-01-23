@@ -11,7 +11,7 @@ const Content = () => {
   const [searchLoader, setSearchLoader] = useState(false);
   useEffect(() => {
     setSearchLoader(true)
-    axios.get("http://localhost:5000/api/shop/getShop").then(
+    axios.get("https://shopaislebackend.onrender.com/api/shop/getShop").then(
       (response) => {
         console.log(response)
         setData(response.data)

@@ -14,7 +14,7 @@ const EditshopForm = ({ id, stateAccess, onHide, name, category, closing, area, 
 
         axios({
             method: "put",
-            url: `http://localhost:5000/api/shop/editShop/${id}`,
+            url: `https://shopaislebackend.onrender.com/api/shop/editShop/${id}`,
             data: values,
         }).then(() => console.log("Shop-edited")).catch(() => console.log("Error occured in editing shop"))
         window.location.reload()
@@ -22,7 +22,7 @@ const EditshopForm = ({ id, stateAccess, onHide, name, category, closing, area, 
 
     }
     useEffect(() => {
-        axios.get("http://localhost:5000/api/shop/getShop").then(
+        axios.get("https://shopaislebackend.onrender.com/api/shop/getShop").then(
             (response) => {
                 // console.log(response)
                 stateAccess(response.data)
