@@ -22,10 +22,6 @@ const Content = () => {
             }
         )
     }, [])
-    // setSearchLoader(false)
-    // const stateAccess = (dataVal) => {
-    //     setData(dataVal)
-    // }
 
     const deleteShop = (id) => {
         axios.delete(`https://shopaislebackend.onrender.com/api/shop/deleteShop/${id}`).then((response) => {

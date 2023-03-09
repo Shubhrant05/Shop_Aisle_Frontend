@@ -74,9 +74,8 @@ export const Nav = props => {
 
 export const LoginNav = () => {
   const navigate = useNavigate()
-
   const onLogout = () => {
-      localStorage.clear()
+      sessionStorage.clear()
       navigate('/')
   }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState , useEffect } from 'react'
 import axios from 'axios'
 import { AiOutlineEye, AiOutlineEyeInvisible } from 'react-icons/ai'
 import '../Common.css'
@@ -7,7 +7,8 @@ import * as Yup from 'yup'
 import Inputfield from './Inputfield'
 import { Button } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom'
-import {Nav} from '../Nav'
+import { LoginNav, Nav } from '../Nav'
+import jwt_decode from "jwt-decode"
 
 
 const LoginForm = () => {
@@ -15,7 +16,30 @@ const LoginForm = () => {
     const navigate = useNavigate()
     const [passBtn, setPassBtn] = useState(false)
     const [isLogin, setIsLogin] = useState(false)
+    const [user, setUser] = useState({})
 
+    const handleCallBackResponse = (res) => {
+        console.log("JWT TOKEN ID", res.credential)
+        var userObject = jwt_decode(res.credential)
+        console.log(userObject)
+        sessionStorage.setItem("user",JSON.stringify(userObject))
+        setUser(JSON.parse(sessionStorage.getItem("user")))
+    }
+    useEffect(() => {
+        /*global google*/
+        user.email_verified && navigate("/dashboard") 
+        console.log(user,"result")
+        google.accounts.id.initialize({
+            client_id: "235257409135-nbaja0i95qriujen6jqoddlhg72uqkn8.apps.googleusercontent.com",
+            callback: handleCallBackResponse
+        })
+        console.log(google.accounts)
+        google.accounts.id.renderButton(
+            document.getElementById("loginBtn"),
+            {theme : "outline" , size : "large"}
+
+        )
+    },[user])
     //   }
     const passBtnHandler = () => {
         passBtn ? setPassBtn(false) : setPassBtn(true)
@@ -69,7 +93,7 @@ const LoginForm = () => {
                     formik => (
                         <>
                             <div className='signup-head' style={{ color: "white" }}> Walk-in the <p style={{ color: "rgb(255,81,81)", display: "inline" }}>Aisle</p></div>
-
+                            <center id = "loginBtn" className='mt-4'></center>
                             <Form method='POST' className='form-input mt-4 p-3'>
                                 <div style={{ textAlign: "center" }}>
                                     <Inputfield placeholder="Enter E-mail" type="email" name="email" />
@@ -90,8 +114,8 @@ const LoginForm = () => {
 
                 }
             </Formik>
-            <div style={{display:'none'}}>
-                <Nav isLogin = {isLogin}/>
+             <div style={{display:'none'}}>
+                <Nav isLogin={isLogin} />
              </div>
             
         </div>

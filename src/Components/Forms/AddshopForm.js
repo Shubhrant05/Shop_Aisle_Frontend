@@ -62,6 +62,7 @@ const AddshopForm = props => {
                                 <Inputfield placeholder="Enter name of place" type="text" name="name" />
                                 <Inputfield placeholder="Enter location" type="text" name="area" />
                                 <Inputfield placeholder="Enter type of place" type="text" name="category" />
+                                
                                 <Inputfield placeholder="Enter opening time" type="time" name="opening" />
                                 <Inputfield placeholder="Enter closing time" type="time" name="closing" />
 
